@@ -1,3 +1,10 @@
 data/
 .ipynb_checkpoints/
+.github/
+.streamlit/
+.vscode/
+app/
+notebooks/.ipynb_checkpoints/
+notebooks/example.ipynb
 scripts/__pycache__/
+tests/
