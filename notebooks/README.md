@@ -48,7 +48,9 @@ The dataset includes:
 - Python with pandas, numpy, matplotlib, seaborn, and scipy for data analysis and visualization.
 
 ## Future Work
-- Integrating with streamlit
+- Integration of statistical tests (e.g., ANOVA) to complement visual findings.
+- Scalable processing for larger datasets using parallelization.
+- Inclusion of predictive models for solar irradiance and environmental conditions.
 
 ## Usage
 1. Load the dataset using the provided notebook or scripts.
