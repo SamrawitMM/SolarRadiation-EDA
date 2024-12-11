@@ -173,7 +173,9 @@ def preprocess_and_filter_data(data, date_col, time_col, years_to_include):
 
 
 # Averages the month for the two years and display the monthly trend
-def plot_monthly_trend(data, columns_to_plot, title='Monthly Trend of Solar Radiation'):
+def plot_monthly_trend(data, columns_to_plot, name):
+
+    title='Monthly Trend of ' + name + ' Solar Radiation'
     
     # Resample the data to monthly averages
     monthly_avg = data.resample('M').mean(numeric_only=True)
