@@ -173,7 +173,9 @@ def preprocess_and_filter_data(data, date_col, time_col, years_to_include):
 
 
 # Averages the month for the two years and display the monthly trend
-def plot_monthly_trend(data, columns_to_plot, title='Monthly Trend of Solar Radiation'):
+def plot_monthly_trend(data, columns_to_plot, name):
+
+    title='Monthly Trend of ' + name + ' Solar Radiation'
     
     # Resample the data to monthly averages
     monthly_avg = data.resample('M').mean(numeric_only=True)
@@ -200,8 +202,9 @@ def plot_monthly_trend(data, columns_to_plot, title='Monthly Trend of Solar Radi
 
 
 # Averages the day found with in 365 days and display the daily trend
-def plot_daily_trends(data, columns_to_plot, title_prefix='Daily Trend of'):
+def plot_daily_trends(data, columns_to_plot, name):
 
+    title_prefix='Daily Trend of ' + name
     # Resample the data to daily averages
     daily_avg = data.resample('D').mean(numeric_only=True)
     
@@ -222,7 +225,9 @@ def plot_daily_trends(data, columns_to_plot, title_prefix='Daily Trend of'):
     plt.show()
 
 # EXtract hour from time column uses group by to find the average and to display the hourly trend
-def plot_hourly_trends(data, columns_to_plot, title_prefix='Hourly Trend of'):
+def plot_hourly_trends(data, columns_to_plot, name):
+
+    title_prefix='Hourly Trend of ' + name
     
     # Convert 'Time' column to datetime and extract the hour
     data['Time'] = pd.to_datetime(data['Time'], format='%H:%M:%S')
