@@ -202,8 +202,9 @@ def plot_monthly_trend(data, columns_to_plot, name):
 
 
 # Averages the day found with in 365 days and display the daily trend
-def plot_daily_trends(data, columns_to_plot, title_prefix='Daily Trend of'):
+def plot_daily_trends(data, columns_to_plot, name):
 
+    title_prefix='Daily Trend of ' + name
     # Resample the data to daily averages
     daily_avg = data.resample('D').mean(numeric_only=True)
     
@@ -224,7 +225,9 @@ def plot_daily_trends(data, columns_to_plot, title_prefix='Daily Trend of'):
     plt.show()
 
 # EXtract hour from time column uses group by to find the average and to display the hourly trend
-def plot_hourly_trends(data, columns_to_plot, title_prefix='Hourly Trend of'):
+def plot_hourly_trends(data, columns_to_plot, name):
+
+    title_prefix='Hourly Trend of ' + name
     
     # Convert 'Time' column to datetime and extract the hour
     data['Time'] = pd.to_datetime(data['Time'], format='%H:%M:%S')
